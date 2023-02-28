@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
 
         ChangeWeapon(_weapons[_currentWeaponNumber]);
     }
-
     
     private void Update()
     {
