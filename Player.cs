@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public event UnityAction <int, int> HealthChanged;
     public event UnityAction<int> MoneyChanged;
 
+    private static int _shoot = Animator.StringToHash("Shoot");
+
     private void Start()
     {
         _animator= GetComponent<Animator>();
@@ -37,13 +39,14 @@ public class Player : MonoBehaviour
 
         ChangeWeapon(_weapons[_currentWeaponNumber]);
     }
+
     
     private void Update()
     {
         if (Input.GetMouseButtonDown(0)) 
         {
             _currentWeapon.Shoot(_shootPoint);
-            _animator.Play("Shoot");
+            _animator.Play(_shoot);
         }
     }
 
